@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCon 2024 - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            color: #1a2a6c;
+            font-size: 2.8rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Navigation Styles */
+        nav {
+            display: flex;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #1a2a6c;
+            padding: 12px 24px;
+            margin: 0 8px;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        nav a:hover, .tweet-link {
+            background: #1a2a6c;
+            color: white;
+            transform: translateY(-2px);
+            border-color: #fdbb2d;
+        }
+        
+        .tweet-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Main Content Styles */
+        main {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Twitter Embed Styles */
+        .twitter-embed {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e1e8ed;
+        }
+        
+        .twitter-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .twitter-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #1da1f2;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .twitter-user {
+            font-weight: bold;
+            color: #14171a;
+        }
+        
+        .twitter-handle {
+            color: #657786;
+            margin-left: 5px;
+        }
+        
+        .twitter-content {
+            color: #14171a;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .twitter-date {
+            color: #657786;
+            font-size: 0.9rem;
+        }
+        
+        .twitter-actions {
+            display: flex;
+            margin-top: 15px;
+            color: #657786;
+        }
+        
+        .twitter-action {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .twitter-action i {
+            margin-right: 5px;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        
+        footer p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 25px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 8px;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            nav a {
+                margin: 5px 0;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="header-content">
+                <h1>TechCon 2024</h1>
+                <nav>
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a>
+                    <a href="register.html"><i class="fas fa-user-plus"></i> Register</a>
+                    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                    <a href="tweets.html"><i class="fab fa-twitter"></i> Tweets</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content Section -->
+        <main>
+            <h2>Welcome to TechCon 2024</h2>
+            <p>Join us for the premier technology conference of the year, where industry leaders, innovators, and enthusiasts come together to explore the latest advancements in AI, blockchain, cloud computing, and more.</p>
+            
+            <p>This three-day event features keynote speakers, hands-on workshops, and networking opportunities with professionals from around the globe. Whether you're a seasoned developer or just starting your tech journey, there's something for everyone at TechCon 2024.</p>
+            
+            <!-- Embedded Tweet -->
+            <div class="twitter-embed">
+                <div class="twitter-header">
+                    <div class="twitter-avatar">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div>
+                        <span class="twitter-user">TechCon Official</span>
+                        <span class="twitter-handle">@TechCon · Apr 10</span>
+                    </div>
+                </div>
+                <div class="twitter-content">
+                    <p>We're thrilled to announce that TechCon 2024 will feature groundbreaking sessions on AI ethics, quantum computing, and sustainable technology! 🚀</p>
+                    <p>#TechCon2024 #Innovation #Technology</p>
+                </div>
+                <div class="twitter-date">10:30 AM · Apr 10, 2024</div>
+                <div class="twitter-actions">
+                    <div class="twitter-action"><i class="far fa-comment"></i> 48</div>
+                    <div class="twitter-action"><i class="fas fa-retweet"></i> 19</div>
+                    <div class="twitter-action"><i class="far fa-heart"></i> 127</div>
+                    <div class="twitter-action"><i class="fas fa-share"></i></div>
+                </div>
+            </div>
+            
+            <p>Don't miss this opportunity to connect with like-minded professionals and learn from the best in the industry. Register today to secure your spot at the most anticipated tech event of the year!</p>
+            
+            <a href="tweets.html" class="tweet-link"><i class="fab fa-twitter"></i> See more tweets about TechCon 2024</a>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; Copyright 2024 TechCon. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
