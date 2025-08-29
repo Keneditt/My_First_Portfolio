@@ -6,7 +6,6 @@
     <title>TechCon 2024 - Tweets</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Copy all the same styles from index.html */
         * {
             margin: 0;
             padding: 0;
@@ -18,74 +17,97 @@
             background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
             color: #333;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            flex: 1;
         }
         
         /* Header Styles */
         header {
             background: rgba(255, 255, 255, 0.95);
-            padding: 30px 0;
+            padding: 20px 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             margin-bottom: 30px;
         }
         
-        .header-content {
+        header ul {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
         }
         
-        h1 {
-            color: #1a2a6c;
-            font-size: 2.8rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        header li {
+            margin: 0 15px;
         }
         
-        /* Navigation Styles */
-        nav {
-            display: flex;
-        }
-        
-        nav a {
+        header a {
             text-decoration: none;
             color: #1a2a6c;
-            padding: 12px 24px;
-            margin: 0 8px;
+            padding: 10px 20px;
             font-weight: 600;
             border-radius: 5px;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            display: block;
         }
         
-        nav a:hover, .home-link {
+        header a:hover {
             background: #1a2a6c;
             color: white;
             transform: translateY(-2px);
-            border-color: #fdbb2d;
-        }
-        
-        .home-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            text-decoration: none;
-            font-weight: 600;
         }
         
         /* Main Content Styles */
         main {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 10px;
+            display: flex;
+            gap: 30px;
             margin-bottom: 30px;
+        }
+        
+        article {
+            flex: 3;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        aside {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            align-self: flex-start;
+        }
+        
+        h1 {
+            color: #1a2a6c;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 3px solid #fdbb2d;
+            padding-bottom: 10px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
         }
         
         /* Twitter Embed Styles */
@@ -155,14 +177,31 @@
             margin-right: 5px;
         }
         
+        .home-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 600;
+            background: #1a2a6c;
+            color: white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .home-link:hover {
+            background: #fdbb2d;
+            transform: translateY(-2px);
+        }
+        
         /* Footer Styles */
         footer {
             background: rgba(0, 0, 0, 0.85);
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
-            margin-top: 40px;
+            margin-top: 20px;
         }
         
         footer p {
@@ -171,144 +210,149 @@
             color: #fff;
         }
         
+        footer a {
+            color: #fdbb2d;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
         /* Responsive Design */
         @media (max-width: 900px) {
-            .header-content {
+            main {
                 flex-direction: column;
+            }
+            
+            header ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            header li {
+                margin: 5px 0;
+                width: 100%;
                 text-align: center;
             }
             
-            nav {
-                margin-top: 25px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav a {
-                margin: 8px;
-            }
-            
             h1 {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
         }
         
         @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            nav a {
-                margin: 5px 0;
-                text-align: center;
-            }
-            
             h1 {
                 font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header Section -->
+        <!-- Header with unordered list of links -->
         <header>
-            <div class="header-content">
-                <h1>TechCon 2024 Tweets</h1>
-                <nav>
-                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-                    <a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a>
-                    <a href="register.html"><i class="fas fa-user-plus"></i> Register</a>
-                    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-                    <a href="tweets.html"><i class="fab fa-twitter"></i> Tweets</a>
-                </nav>
-            </div>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="tweets.html"><i class="fab fa-twitter"></i> Tweets</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
         </header>
 
-        <!-- Main Content Section -->
+        <!-- Main content with article and aside -->
         <main>
-            <h2>Latest TechCon 2024 Tweets</h2>
-            <p>See what people are saying about TechCon 2024 on Twitter. Join the conversation using #TechCon2024!</p>
-            
-            <!-- Embedded Tweet 1 -->
-            <div class="twitter-embed">
-                <div class="twitter-header">
-                    <div class="twitter-avatar">
-                        <i class="fab fa-twitter"></i>
+            <article>
+                <h1>TechCon 2024 Tweets</h1>
+                <p>See what people are saying about TechCon 2024 on Twitter. Join the conversation using #TechCon2024!</p>
+                
+                <!-- Embedded Tweet 1 -->
+                <div class="twitter-embed">
+                    <div class="twitter-header">
+                        <div class="twitter-avatar">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div>
+                            <span class="twitter-user">TechCon Official</span>
+                            <span class="twitter-handle">@TechCon · Apr 10</span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="twitter-user">TechCon Official</span>
-                        <span class="twitter-handle">@TechCon · Apr 10</span>
+                    <div class="twitter-content">
+                        <p>We're thrilled to announce that TechCon 2024 will feature groundbreaking sessions on AI ethics, quantum computing, and sustainable technology! 🚀</p>
+                        <p>#TechCon2024 #Innovation #Technology</p>
                     </div>
-                </div>
-                <div class="twitter-content">
-                    <p>We're thrilled to announce that TechCon 2024 will feature groundbreaking sessions on AI ethics, quantum computing, and sustainable technology! 🚀</p>
-                    <p>#TechCon2024 #Innovation #Technology</p>
-                </div>
-                <div class="twitter-date">10:30 AM · Apr 10, 2024</div>
-                <div class="twitter-actions">
-                    <div class="twitter-action"><i class="far fa-comment"></i> 48</div>
-                    <div class="twitter-action"><i class="fas fa-retweet"></i> 19</div>
-                    <div class="twitter-action"><i class="far fa-heart"></i> 127</div>
-                    <div class="twitter-action"><i class="fas fa-share"></i></div>
-                </div>
-            </div>
-            
-            <!-- Embedded Tweet 2 -->
-            <div class="twitter-embed">
-                <div class="twitter-header">
-                    <div class="twitter-avatar" style="background: #fdbb2d;">
-                        <i class="fab fa-twitter"></i>
-                    </div>
-                    <div>
-                        <span class="twitter-user">Sarah Johnson</span>
-                        <span class="twitter-handle">@SarahTech · Apr 9</span>
+                    <div class="twitter-date">10:30 AM · Apr 10, 2024</div>
+                    <div class="twitter-actions">
+                        <div class="twitter-action"><i class="far fa-comment"></i> 48</div>
+                        <div class="twitter-action"><i class="fas fa-retweet"></i> 19</div>
+                        <div class="twitter-action"><i class="far fa-heart"></i> 127</div>
+                        <div class="twitter-action"><i class="fas fa-share"></i></div>
                     </div>
                 </div>
-                <div class="twitter-content">
-                    <p>Just registered for TechCon 2024! Can't wait to learn about the latest advancements in AI and connect with other tech enthusiasts. 🤖</p>
-                    <p>#TechCon2024 #AI #Networking</p>
-                </div>
-                <div class="twitter-date">2:15 PM · Apr 9, 2024</div>
-                <div class="twitter-actions">
-                    <div class="twitter-action"><i class="far fa-comment"></i> 12</div>
-                    <div class="twitter-action"><i class="fas fa-retweet"></i> 7</div>
-                    <div class="twitter-action"><i class="far fa-heart"></i> 34</div>
-                    <div class="twitter-action"><i class="fas fa-share"></i></div>
-                </div>
-            </div>
-            
-            <!-- Embedded Tweet 3 -->
-            <div class="twitter-embed">
-                <div class="twitter-header">
-                    <div class="twitter-avatar" style="background: #b21f1f;">
-                        <i class="fab fa-twitter"></i>
+                
+                <!-- Embedded Tweet 2 -->
+                <div class="twitter-embed">
+                    <div class="twitter-header">
+                        <div class="twitter-avatar" style="background: #fdbb2d;">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div>
+                            <span class="twitter-user">Sarah Johnson</span>
+                            <span class="twitter-handle">@SarahTech · Apr 9</span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="twitter-user">Tech Insider</span>
-                        <span class="twitter-handle">@TechInsider · Apr 8</span>
+                    <div class="twitter-content">
+                        <p>Just registered for TechCon 2024! Can't wait to learn about the latest advancements in AI and connect with other tech enthusiasts. 🤖</p>
+                        <p>#TechCon2024 #AI #Networking</p>
+                    </div>
+                    <div class="twitter-date">2:15 PM · Apr 9, 2024</div>
+                    <div class="twitter-actions">
+                        <div class="twitter-action"><i class="far fa-comment"></i> 12</div>
+                        <div class="twitter-action"><i class="fas fa-retweet"></i> 7</div>
+                        <div class="twitter-action"><i class="far fa-heart"></i> 34</div>
+                        <div class="twitter-action"><i class="fas fa-share"></i></div>
                     </div>
                 </div>
-                <div class="twitter-content">
-                    <p>TechCon continues to be one of the most influential tech conferences globally. Their 2024 lineup looks incredible! 👏</p>
-                    <p>#TechCon2024 #Technology #Conference</p>
+                
+                <!-- Embedded Tweet 3 -->
+                <div class="twitter-embed">
+                    <div class="twitter-header">
+                        <div class="twitter-avatar" style="background: #b21f1f;">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div>
+                            <span class="twitter-user">Tech Insider</span>
+                            <span class="twitter-handle">@TechInsider · Apr 8</span>
+                        </div>
+                    </div>
+                    <div class="twitter-content">
+                        <p>TechCon continues to be one of the most influential tech conferences globally. Their 2024 lineup looks incredible! 👏</p>
+                        <p>#TechCon2024 #Technology #Conference</p>
+                    </div>
+                    <div class="twitter-date">4:45 PM · Apr 8, 2024</div>
+                    <div class="twitter-actions">
+                        <div class="twitter-action"><i class="far fa-comment"></i> 23</div>
+                        <div class="twitter-action"><i class="fas fa-retweet"></i> 14</div>
+                        <div class="twitter-action"><i class="far fa-heart"></i> 56</div>
+                        <div class="twitter-action"><i class="fas fa-share"></i></div>
+                    </div>
                 </div>
-                <div class="twitter-date">4:45 PM · Apr 8, 2024</div>
-                <div class="twitter-actions">
-                    <div class="twitter-action"><i class="far fa-comment"></i> 23</div>
-                    <div class="twitter-action"><i class="fas fa-retweet"></i> 14</div>
-                    <div class="twitter-action"><i class="far fa-heart"></i> 56</div>
-                    <div class="twitter-action"><i class="fas fa-share"></i></div>
-                </div>
-            </div>
-            
-            <a href="index.html" class="home-link"><i class="fas fa-arrow-left"></i> Back to Homepage</a>
+                
+                <a href="index.html" class="home-link"><i class="fas fa-arrow-left"></i> Back to Homepage</a>
+            </article>
+
+            <aside>
+                <p>placeholder to add comment thread later</p>
+            </aside>
         </main>
 
-        <!-- Footer Section -->
+        <!-- Footer with required text -->
         <footer>
-            <p>&copy; Copyright 2024 TechCon. All rights reserved.</p>
+            <p>Made by John Doe - <a href="https://github.com/johndoe" target="_blank">here</a></p>
         </footer>
     </div>
 </body>
